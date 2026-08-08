@@ -56,12 +56,22 @@
   }
 }
 
+/* Global reset — prevents horizontal overflow that makes mobile browsers
+   zoom out / cut off content. (Tailwind preflight already applies
+   border-box, but we make it explicit and independent of preflight.) */
+* {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
   @apply bg-cream text-ink font-sans antialiased overflow-x-hidden;
+  max-width: 100%;
 }
 
 .dark body {
@@ -125,10 +135,11 @@ body {
   background-image: radial-gradient(var(--color-bone) 1.5px, transparent 1.5px);
 }
 
-/* Underline scribble */
+/* Underline scribble — wraps instead of overflowing on narrow phones */
 .scribble {
   position: relative;
-  white-space: nowrap;
+  white-space: normal;
+  text-wrap: balance;
 }
 .scribble::after {
   content: "";

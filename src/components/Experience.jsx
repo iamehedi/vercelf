@@ -20,7 +20,7 @@ export default function Experience() {
         <div className="relative ml-4 border-l-4 border-dashed border-ink/20 dark:border-nightline pl-8 sm:ml-8">
           {experience.map((job, i) => (
             <Reveal key={`${job.company}-${job.period}`} delay={i * 120} className="relative pb-12 last:pb-0">
-              <span className="absolute -left-[2.6rem] top-1 flex size-9 items-center justify-center rounded-full border-3 border-ink bg-white dark:border-nightline dark:bg-nightcard text-lg">
+              <span className="absolute -left-[2rem] top-1 flex size-9 items-center justify-center rounded-full border-3 border-ink bg-white dark:border-nightline dark:bg-nightcard text-lg">
                 {job.emoji}
               </span>
 

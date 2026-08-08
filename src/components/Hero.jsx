@@ -24,7 +24,7 @@ export default function Hero() {
           </Reveal>
 
           <Reveal delay={100}>
-            <h1 className="mt-6 font-display text-5xl leading-[0.95] font-extrabold tracking-tight sm:text-6xl xl:text-7xl">
+            <h1 className="mt-6 font-display text-[clamp(1.9rem,7vw,3rem)] leading-[0.95] font-extrabold tracking-tight sm:text-6xl xl:text-7xl">
               Hey, I'm{' '}
               <span className="text-punch">
                 {profile.firstName}

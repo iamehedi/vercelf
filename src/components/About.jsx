@@ -60,15 +60,17 @@ export default function About() {
         </div>
       </div>
 
-      {/* Skill marquee */}
-      <div className="mt-16 -rotate-1 border-y-4 border-ink bg-sun py-4 dark:border-bone">
-        <div className="animate-marquee flex w-max gap-8 whitespace-nowrap">
-          {[...skills.marquee, ...skills.marquee].map((skill, i) => (
-            <span key={i} className="flex items-center gap-3 text-lg font-extrabold uppercase text-ink">
-              <span className="text-2xl">{['💛','💜','💙','💚'][i % 4]}</span>
-              {skill}
-            </span>
-          ))}
+      {/* Skill marquee — clipped so the tilt + wide strip never overflow the viewport */}
+      <div className="mt-16 overflow-hidden">
+        <div className="-rotate-1 border-y-4 border-ink bg-sun py-4 dark:border-bone">
+          <div className="animate-marquee flex w-max gap-8 whitespace-nowrap">
+            {[...skills.marquee, ...skills.marquee].map((skill, i) => (
+              <span key={i} className="flex items-center gap-3 text-lg font-extrabold uppercase text-ink">
+                <span className="text-2xl">{['💛','💜','💙','💚'][i % 4]}</span>
+                {skill}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>
