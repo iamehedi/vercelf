@@ -60,7 +60,7 @@ export default function Projects() {
                         target="_blank"
                         rel="noreferrer"
                         aria-label={`${project.title} source code`}
-                        className="sticker flex size-9 items-center justify-center rounded-xl bg-white"
+                        className="sticker flex size-9 items-center justify-center rounded-xl bg-white dark:bg-nightcard"
                       >
                         <GithubIcon />
                       </a>

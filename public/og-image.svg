@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff8ef"/>
+      <stop offset="1" stop-color="#ffe3c2"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff4d6d"/>
+      <stop offset="1" stop-color="#ffc24b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1030" cy="120" r="200" fill="#ff4d6d" opacity="0.18"/>
+  <circle cx="180" cy="560" r="230" fill="#38b6ff" opacity="0.14"/>
+  <rect x="80" y="70" width="1040" height="490" rx="56" fill="#ffffff" stroke="#191a23" stroke-width="6"/>
+  <rect x="104" y="94" width="992" height="442" rx="44" fill="#191a23"/>
+  <text x="140" y="260" font-family="Poppins, Segoe UI, system-ui, sans-serif" font-size="92" font-weight="800" fill="#fff8ef">Mehedi Hasan</text>
+  <rect x="144" y="296" width="330" height="16" rx="8" fill="url(#accent)"/>
+  <text x="140" y="392" font-family="Poppins, Segoe UI, system-ui, sans-serif" font-size="40" font-weight="700" fill="#eceaf4">AI-Assisted Full-Stack Developer</text>
+  <text x="140" y="452" font-family="Poppins, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="500" fill="#eceaf4" opacity="0.75">Rajshahi, Bangladesh</text>
+  <text x="140" y="504" font-family="Poppins, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#ffc24b">iamehedihsn.iam.bd</text>
+</svg>

@@ -2,6 +2,7 @@ import { MapPin, PartyPopper } from 'lucide-react'
 import { useContent } from '../lib/useContent'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
+import Marquee from './Marquee'
 
 export default function About() {
   const { profile, skills } = useContent()
@@ -63,14 +64,14 @@ export default function About() {
       {/* Skill marquee — clipped so the tilt + wide strip never overflow the viewport */}
       <div className="mt-16 overflow-hidden">
         <div className="-rotate-1 border-y-4 border-ink bg-sun py-4 dark:border-bone">
-          <div className="animate-marquee flex w-max gap-8 whitespace-nowrap">
-            {[...skills.marquee, ...skills.marquee].map((skill, i) => (
+          <Marquee copyClass="gap-8 pr-8 whitespace-nowrap">
+            {skills.marquee.map((skill, i) => (
               <span key={i} className="flex items-center gap-3 text-lg font-extrabold uppercase text-ink">
                 <span className="text-2xl">{['💛','💜','💙','💚'][i % 4]}</span>
                 {skill}
               </span>
             ))}
-          </div>
+          </Marquee>
         </div>
       </div>
     </section>

@@ -1,0 +1,17 @@
+{
+  "name": "Mehedi Hasan | AI-Assisted Full-Stack Developer",
+  "short_name": "Mehedi Hasan",
+  "description": "Mehedi Hasan is an AI-assisted full-stack developer from Rajshahi, Bangladesh, building modern web applications, software, APIs and AI-powered digital products.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff8ef",
+  "theme_color": "#ff4d6d",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

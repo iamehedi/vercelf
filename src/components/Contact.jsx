@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Send } from 'lucide-react'
 import { useContent } from '../lib/useContent'
 import Reveal from './Reveal'
+import SectionHeading from './SectionHeading'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -62,7 +63,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative scroll-mt-24 overflow-hidden bg-ink py-24 text-cream dark:border-y-4 dark:border-nightline dark:bg-nightcard"
+      className="relative scroll-mt-24 overflow-hidden bg-white py-24 text-ink dark:border-y-4 dark:border-nightline dark:bg-nightcard dark:text-cream"
     >
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="animate-blob absolute -top-24 right-0 size-96 rounded-full bg-punch/25 blur-3xl" />
@@ -70,10 +71,18 @@ export default function Contact() {
       </div>
 
       <div className="relative mx-auto w-full max-w-xl px-4 sm:px-6">
+        <SectionHeading
+          kicker="Say hello"
+          title={
+            <>
+              Contact <span className="text-punch">Mehedi</span>
+            </>
+          }
+        />
         <Reveal delay={200}>
           <form
             onSubmit={handleSubmit}
-            className="sticker rounded-[2rem] border-cream/50 bg-cream p-7 text-ink shadow-[8px_8px_0_rgba(255,248,239,0.4)] sm:p-9 dark:border-bone/25 dark:bg-night dark:text-bone dark:shadow-[8px_8px_0_var(--color-nightline)]"
+            className="sticker rounded-[2rem] border-ink/20 bg-cream p-7 text-ink shadow-[8px_8px_0_rgba(25,26,35,0.18)] sm:p-9 dark:border-bone/25 dark:bg-night dark:text-bone dark:shadow-[8px_8px_0_var(--color-nightline)]"
           >
             {sent ? (
               <div className="flex h-full min-h-72 flex-col items-center justify-center text-center">

@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { DataProvider } from './lib/DataContext'
 import Portfolio from './Portfolio'
+import NotFound from './components/NotFound'
 
 const Admin = lazy(() => import('./admin/Admin'))
 
@@ -37,7 +38,9 @@ export default function App() {
         <Suspense fallback={<Loading />}>
           <Routes>
             {adminPath && adminPath !== '/' && <Route path={adminPath} element={<Admin />} />}
-            <Route path="*" element={<Portfolio />} />
+            <Route path="/" element={<Portfolio />} />
+            {/* Everything else is a real 404 (not a soft copy of the homepage) */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </BrowserRouter>

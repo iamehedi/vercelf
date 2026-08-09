@@ -1,11 +1,11 @@
 export const profile = {
   name: 'Mehedi Hasan',
   firstName: 'Mehedi',
-  role: 'Full-Stack Developer',
+  role: 'AI-Assisted Full-Stack Developer',
   tagline: "I build playful, blazing-fast web apps people love using.",
-  bio: "Full-stack developer who turns wild ideas into polished products. I sweat the details — from pixel-perfect UI to API design — and I love shipping fast, friendly software that feels a little more fun than the average.",
-  location: 'Dhaka, Bangladesh',
-  email: 'hello@mehedi.dev',
+  bio: "I'm Mehedi Hasan, an AI-assisted full-stack developer from Rajshahi, Bangladesh. I turn wild ideas into polished products — from pixel-perfect UI to API design — and I love shipping fast, friendly software that feels a little more fun than the average.",
+  location: 'Rajshahi, Bangladesh',
+  email: 'iamehedihsn@gmail.com',
   resumeUrl: '#',
   avatarEmoji: '🧑‍🚀',
   stats: [
@@ -15,7 +15,7 @@ export const profile = {
     { value: '😴 9h', label: 'Sleeping & eating' },
   ],
   socials: [
-    { label: 'GitHub', url: 'https://github.com/' },
+    { label: 'GitHub', url: 'https://github.com/iamehedi' },
     { label: 'LinkedIn', url: 'https://linkedin.com/in/' },
     { label: 'Twitter', url: 'https://x.com/' },
     { label: 'Dribbble', url: 'https://dribbble.com/' },

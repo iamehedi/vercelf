@@ -17,6 +17,10 @@ function mapProfile(row, local) {
           email: row.email || local.email,
           resumeUrl: row.resume_url || local.resumeUrl,
           avatarEmoji: row.avatar_emoji || local.avatarEmoji,
+          // Admin-managed SEO fields (empty → runtime defaults from src/config/seo.js)
+          seoTitle: row.seo_title || '',
+          metaDescription: row.meta_description || '',
+          ogImage: row.og_image || '',
         }
       : {}),
   }

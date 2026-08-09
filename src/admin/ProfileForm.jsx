@@ -13,12 +13,18 @@ const FIELDS = [
   { key: 'email', label: 'Contact email' },
   { key: 'resume_url', label: 'Résumé URL' },
   { key: 'avatar_emoji', label: 'Avatar emoji' },
+  // SEO metadata — drives the site title, meta description & social share image.
+  // Leave empty to use the sensible defaults in src/config/seo.js.
+  { key: 'seo_title', label: 'SEO title (optional)', type: 'seo' },
+  { key: 'meta_description', label: 'Meta description (optional)', type: 'seo', textarea: true },
+  { key: 'og_image', label: 'Open Graph image URL (optional)', type: 'seo' },
 ]
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const MAX_LEN = {
   name: 120, first_name: 80, role: 200, tagline: 300, bio: 6000,
   location: 200, email: 254, resume_url: 500, avatar_emoji: 32,
+  seo_title: 120, meta_description: 320, og_image: 500,
 }
 
 export default function ProfileForm() {
@@ -84,6 +90,12 @@ export default function ProfileForm() {
       setBusy(false)
       return
     }
+    const og = payload.og_image
+    if (og && !/^https?:\/\//i.test(og)) {
+      setNotice({ type: 'error', text: 'Open Graph image URL must start with http(s)://.' })
+      setBusy(false)
+      return
+    }
     const { error } = await supabase.from('profile').update(payload).eq('id', 1)
     if (error) setNotice({ type: 'error', text: error.message })
     else setNotice({ type: 'ok', text: 'Profile saved — live on the site now.' })
@@ -97,7 +109,8 @@ export default function ProfileForm() {
     <div>
       <h2 className="font-display text-2xl font-extrabold">Profile</h2>
       <p className="mt-1 text-sm font-semibold text-ink/55 dark:text-bone/55">
-        Name, bio, contact info — shown in the hero, about and contact sections.
+        Name, bio, contact info — shown in the hero, about and contact sections. The optional SEO
+        fields at the bottom power search & social metadata (leave empty for defaults).
       </p>
 
       {notice && (
@@ -121,10 +134,12 @@ export default function ProfileForm() {
             {FIELDS.filter((f) => f.key !== 'resume_url').map((field) => (
               <label
                 key={field.key}
-                className={field.type === 'textarea' ? 'sm:col-span-2' : ''}
+                className={
+                  field.type === 'textarea' || field.type === 'seo' ? 'sm:col-span-2' : ''
+                }
               >
                 <span className="mb-1.5 block text-sm font-extrabold">{field.label}</span>
-                {field.type === 'textarea' ? (
+                {field.type === 'textarea' || (field.type === 'seo' && field.textarea) ? (
                   <textarea
                     rows={4}
                     maxLength={MAX_LEN[field.key] ?? 2000}

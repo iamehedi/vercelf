@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# The private admin panel is registered only when VITE_ADMIN_PATH is set at
+# build time. When it is, vite-plugin-seo.js rewrites this file to include:
+#   Disallow: /<admin-path>
+# Public assets (CSS, JS, images) are never blocked.
+
+Sitemap: https://iamehedihsn.iam.bd/sitemap.xml
